@@ -1,26 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="author" content="alexcamachogz">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<main class="application">
+  <header class="application__header">
+    <div class="header__title">calc</div>
 
+    <div class="header__themes">
+      <div class="themes__position">
+        <span class="position">1</span>
+        <span class="position">2</span>
+        <span class="position">3</span>
+      </div>
+      <form class="themes__slider">
+        <label for="slider" class="slider__label">THEME</label>
+        <input type="range" name="slider" min="1" max="3" id="slider" class="slider">
+      </form>
+    </div>
 
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  </header>
+  <div class="calc">
+    <div class="calc__display-container" id="displayContainer">
+      <p class="display__text" id="displayText">0</p>
+      <p class="display__operation" id="displayOperation"></p>
+    </div>
+    <div class="calc__buttons-container">
+      <div class="row">
+        <button class="button">7</button>
+        <button class="button">8</button>
+        <button class="button">9</button>
+        <button class="button button--blue">DEL</button>
+      </div>
+
+      <div class="row">
+        <button class="button">4</button>
+        <button class="button">5</button>
+        <button class="button">6</button>
+        <button class="button">+</button>
+      </div>
+
+      <div class="row">
+        <button class="button">1</button>
+        <button class="button">2</button>
+        <button class="button">3</button>
+        <button class="button">-</button>
+      </div>
+
+      <div class="row">
+        <button class="button">.</button>
+        <button class="button">0</button>
+        <button class="button">/</button>
+        <button class="button">x</button>
+      </div>
+
+      <div class="row">
+        <button class="button button--blue button--big">RESET</button>
+        <button class="button button--red button--big">=</button>
+      </div>
+    </div>
   </div>
+</main>
+<script src="index.js"></script>
+<script src="theme.js"></script>
 </body>
 </html>

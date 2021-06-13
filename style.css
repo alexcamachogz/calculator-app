@@ -1,18 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@300;700&display=swap');
 
 :root {
   /* Theme 1 */
-  --mainBackground: hsl(222, 26%, 31%);
-  --keypadBackground: hsl(223, 31%, 20%);
-  --screenBackground: hsl(224, 36%, 15%);
-  --keyDeleteBackground: hsl(225, 21%, 49%);
-  --keyDeleteShadow: hsl(224, 28%, 35%);
-  --red: hsl(6, 63%, 50%);
-  --darkRed: hsl(6, 70%, 34%);
-  --keyBackground: hsl(30, 25%, 89%);
-  --keyShadow: hsl(28, 16%, 65%);
-  --darkText: hsl(221, 14%, 31%);
-  --whiteText: hsl(0, 0%, 100%);
 }
 
 * {
@@ -26,31 +15,148 @@ html {
   font-size: 62.5%;
 }
 
+html[data-theme="dark"] {
+  --mainBackground: hsl(222, 26%, 31%);
+  --keypadBackground: hsl(223, 31%, 20%);
+  --screenBackground: hsl(224, 36%, 15%);
+  --keyDeleteBackground: hsl(225, 21%, 49%);
+  --keyDeleteShadow: hsl(224, 28%, 35%);
+  --red: hsl(6, 63%, 50%);
+  --darkRed: hsl(6, 70%, 34%);
+  --keyBackground: hsl(30, 25%, 89%);
+  --keyShadow: hsl(28, 16%, 65%);
+  --darkText: hsl(221, 14%, 31%);
+  --whiteText: hsl(0, 0%, 100%);
+  --whiteButtons: hsl(0, 0%, 100%);
+}
+
+html[data-theme="light"] {
+  --mainBackground: hsl(0, 0%, 90%);
+  --keypadBackground: hsl(0, 5%, 81%);
+  --screenBackground: hsl(0, 0%, 93%);
+  --keyDeleteBackground: hsl(185, 42%, 37%);
+  --keyDeleteShadow: hsl(185, 58%, 25%);
+  --red: hsl(25, 98%, 40%);
+  --darkRed: hsl(25, 99%, 27%);
+  --keyBackground: hsl(45, 7%, 89%);
+  --keyShadow: hsl(35, 11%, 61%);
+  --darkText: hsl(60, 10%, 19%);
+  --whiteText: hsl(60, 10%, 19%);
+  --whiteButtons: hsl(0, 0%, 100%);
+}
+
+html[data-theme="purple"] {
+  --mainBackground: hsl(268, 75%, 9%);
+  --keypadBackground: hsl(268, 71%, 12%);
+  --screenBackground: hsl(268, 71%, 12%);
+  --keyDeleteBackground: hsl(281, 89%, 26%);
+  --keyDeleteShadow: hsl(281, 89%, 26%);
+  --red: hsl(176, 100%, 44%);
+  --darkRed: hsl(177, 92%, 70%);
+  --keyBackground: hsl(268, 47%, 21%);
+  --keyShadow: hsl(290, 70%, 36%);
+  --darkText: hsl(52, 100%, 62%);
+  --whiteText: hsl(52, 100%, 62%);
+  --whiteButtons: hsl(0, 0%, 100%);
+}
+
 body {
   background-color: var(--mainBackground);
   font-family: 'Spartan', sans-serif;
-  font-size: 3rem;
+  font-weight: 700;
+  transition: all 1.5s;
+}
+
+.row {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.row:last-of-type {
+  margin-bottom: 2rem;
 }
 
 .application {
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.calc {
-  /*border: 1px solid red;*/
+.application .application__header {
+  width: 30rem;
+  height: 7rem;
   display: flex;
-  flex-direction: column;
-  width: 80%;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.calc .calc__title {
+.application__header .header__title {
   color: var(--whiteText);
-  margin-bottom: 3rem;
-  margin-top: 2rem;
+  font-size: 3rem;
+  align-self: flex-start;
 }
+
+.header__themes {
+  height: 80%;
+  min-width: 20%;
+}
+
+.themes__slider {
+  display: flex;
+  align-items: center;
+}
+
+.slider {
+  width: 6rem;
+  height: 2.5rem;
+  -webkit-appearance: none;
+  outline: none;
+  background-color: var(--keypadBackground);
+  border-radius: 30px;
+  padding: 0 3px;
+  transition: all 1.5s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: var(--red);
+  filter: drop-shadow(0 0 1px var(--red));
+  cursor: pointer;
+}
+
+.themes__position {
+  position: relative;
+  left: 8.5rem;
+}
+
+.position, .slider__label {
+  color: var(--whiteText);
+}
+
+.slider__label {
+  display: inline-block;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  padding-right: 2.5rem;
+}
+
+.position {
+  display: inline-block;
+  padding: 0 5px;
+}
+
+.calc {
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+}
+
 
 .calc .calc__display-container {
   background-color: var(--screenBackground);
@@ -63,7 +169,9 @@ body {
   color: var(--whiteText);
   text-align: right;
   width: 100%;
+  font-size: 3rem;
   padding-right: 1rem;
+  padding-top: .3rem;
 }
 
 .calc .calc__display-container .display__text {
@@ -78,7 +186,7 @@ body {
   line-height: 3rem;
 }
 
-.calc__buttons-container {
+.calc .calc__buttons-container {
   background-color: var(--keypadBackground);
   border-radius: .8rem;
   display: flex;
@@ -86,6 +194,71 @@ body {
   align-items: center;
 }
 
-button {
-  width: 50px;
+.button {
+  font-family: 'Spartan', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 1rem;
+  border: 0;
+  background-color: var(--keyBackground);
+  box-shadow: 0 4px 0 0 var(--keyShadow);
+  padding-top: .5rem;
+}
+
+.button:active {
+  background-color: var(--keyShadow);
+}
+
+.button.button--big {
+  width: 12.8rem;
+}
+
+.button.button--blue,
+.button.button--red {
+  color: var(--whiteButtons);
+  font-weight: 300;
+}
+
+
+.button.button--blue {
+  background-color: var(--keyDeleteBackground);
+  box-shadow: 0 4px 0 0 var(--keyDeleteShadow);
+}
+
+.button.button--blue:active {
+  background-color: var(--keyDeleteShadow);
+}
+
+.button.button--red {
+  background-color: var(--red);
+  box-shadow: 0 4px 0 0 var(--darkRed);
+}
+
+.button.button--red:active {
+  background-color: var(--darkRed);
+}
+
+@media screen and (min-width: 900px) {
+  .row {
+    gap: 2rem;
+  }
+
+  .application .application__header {
+    width: 38rem;
+  }
+
+  .calc {
+    width: 38rem;
+  }
+
+  .button {
+    width: 7rem;
+    height: 4rem;
+  }
+
+  .button.button--big {
+    width: 16rem;
+  }
 }
