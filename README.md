@@ -7,7 +7,7 @@
 <h1 id="calc">🧮 Calculator app</h1>
 
 This is a Calculator app for Goblant Bootcamp
-The resources used here are from [Calculator App](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29) in Frontend Mentor.
+The resources used to build the app are from [Calculator App](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29) in Frontend Mentor.
 
 You can see the live preview → [Calculator app](http://calc.alexcamachogz.com/).
 
