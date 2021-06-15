@@ -131,6 +131,7 @@ body {
 }
 
 .themes__position {
+  width: 6rem;
   position: relative;
   left: 8.5rem;
 }
