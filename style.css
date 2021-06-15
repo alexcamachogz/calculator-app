@@ -170,9 +170,9 @@ body {
   text-align: right;
   width: 100%;
   font-size: 3rem;
-  padding-right: 1rem;
-  padding-top: .3rem;
-  overflow: ellipsis;
+  padding: .3rem 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .calc .calc__display-container .display__text {
@@ -261,5 +261,17 @@ body {
 
   .button.button--big {
     width: 16rem;
+  }
+}
+
+
+@media screen and (max-height: 650px) {
+  .application {
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .application__header {
+    margin: 3rem;
   }
 }
