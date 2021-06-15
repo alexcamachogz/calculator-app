@@ -172,7 +172,7 @@ body {
   font-size: 3rem;
   padding-right: 1rem;
   padding-top: .3rem;
-  overflow: hidden;
+  overflow: ellipsis;
 }
 
 .calc .calc__display-container .display__text {
