@@ -9,7 +9,7 @@
 This is a Calculator app for Goblant Bootcamp
 The resources used to build the app are from [Calculator App](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29) in Frontend Mentor.
 
-You can see the live preview → [Calculator app](https://calc.alexcamachogz.com/).
+You can see the live preview → [Calculator app](https://calculator-app-alexcamachogz.vercel.app).
 
 ## Table of contents
 
